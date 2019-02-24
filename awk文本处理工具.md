@@ -441,3 +441,16 @@ BASH script
 BASH script
 ```
 
+
+
+**3. awk正则使用外部变量**
+
+此时在正则里面使用'"$var"'
+
+```shell
+[root@localhost jianshu]# var="cc"
+[root@localhost jianshu]# awk -F: '/'"$var"'[0-9]+/{print $1,"'"$var"'"}' /etc/passwd 
+cc1 cc
+cc2 cc
+```
+
